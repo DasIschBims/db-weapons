@@ -1,0 +1,13 @@
+name: dbWeapons
+version: 1.0.0
+description: ""
+main: dev.dasischbims.Main
+authors:
+  - DasIschBims
+commands:
+  ec:
+    description: Open your Ender Chest
+    usage: /<command>
+  item:
+    description: Give yourself an Item
+    usage: /<command> <item>
