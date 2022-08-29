@@ -2,6 +2,7 @@ name: dbWeapons
 version: 1.0.0
 description: ""
 main: dev.dasischbims.Main
+api-version: 1.19
 authors:
   - DasIschBims
 commands:

@@ -15,10 +15,12 @@ class ItemCommand : CommandExecutor {
                 player.sendMessage("§4Please specify an item!")
                 return true
             }
-            if (Material.getMaterial(args[0].uppercase()) != null) {
-                player.inventory.addItem(ItemStack(Material.getMaterial(args[0].uppercase())!!, 1))
-                // turn the first letter of the item to uppercase and the rest to lowercase
-                player.sendMessage("§aYou have received the item §6${args[0].lowercase().replaceFirstChar { it.uppercase() }}§a!§r")
+            val material = Material.getMaterial(args[0].uppercase())
+            // check if amount is specified and if it is a number and if it is greater than 0
+            val amount = if (args.size > 1 && args[1].toIntOrNull() != null && args[1].toInt() > 0) args[1].toInt() else 1
+            if (material != null) {
+                player.inventory.addItem(ItemStack(material, amount))
+                player.sendMessage("§aYou have received the item §6${args[0].lowercase().replaceFirstChar { it.uppercase() }} (x${amount})§a!§r")
             } else {
                 player.sendMessage("§4The item §6${args[0].lowercase().replaceFirstChar { it.uppercase() }}§4 does not exist!§r")
             }
