@@ -3,11 +3,9 @@ package dev.dasischbims
 import com.fasterxml.jackson.databind.exc.MismatchedInputException
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import org.bukkit.inventory.ItemStack
 import java.io.File
 
 // consts
-val customItemMap = HashMap<String, ItemStack>()
 
 data class PluginConfig(val texturePackURL: String, val texturePackHash: String)
 private val DEFAULT_CONFIG = PluginConfig("", "")
@@ -19,7 +17,7 @@ internal fun loadPluginConfig(){
     CONFIG = if(configFile.exists()){
         try {
             jacksonObjectMapper().readValue(configFile)
-        }catch (ex: MismatchedInputException){
+        } catch (ex: MismatchedInputException){
             jacksonObjectMapper().readTree(configFile).run {
                 PluginConfig(
                     DEFAULT_CONFIG.texturePackURL,

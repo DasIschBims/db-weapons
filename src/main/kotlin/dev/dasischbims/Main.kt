@@ -9,7 +9,6 @@ class Main : JavaPlugin() {
     override fun onEnable() {
         // Plugin startup logic
         INSTANCE = this
-        println(INSTANCE)
         initServer()
     }
 
