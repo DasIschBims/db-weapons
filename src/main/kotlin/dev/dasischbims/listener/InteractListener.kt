@@ -1,6 +1,7 @@
 package dev.dasischbims.listener
 
-import dev.dasischbims.items.staffs.WeatherStaff
+import dev.dasischbims.items.staffs.WindStaff
+import dev.dasischbims.items.weapons.Sniper
 import org.bukkit.Material
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -25,9 +26,14 @@ class InteractListener: Listener {
                         1002 -> {
                             player.sendMessage("You used a water staff")
                         }
-                        1003 -> WeatherStaff.handleClick(event)
+                        1003 -> WindStaff.handleClick(event)
                     }
                     event.isCancelled = true
+                }
+                Material.SPYGLASS -> {
+                    when (cmd) {
+                        1001 -> Sniper.handleClick(event)
+                    }
                 }
                 else -> return
             }

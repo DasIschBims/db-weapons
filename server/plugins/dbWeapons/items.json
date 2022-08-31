@@ -27,11 +27,11 @@
     "lore":["", "§fWater Staff"],
     "cmd":1002
   },
-  "weather_staff": {
+  "wind_staff": {
     "id": "5",
     "material":"WOODEN_HOE",
-    "name":"§r§lWeather Staff",
-    "lore":["", "§fWeather Staff"],
+    "name":"§r§lWind Staff",
+    "lore":["", "§6Left Click§7: §fSpawn a cloud that catches you.", "", "§6Right Click§7: §fLaunches entities into the air."],
     "cmd":1003
   }
 }

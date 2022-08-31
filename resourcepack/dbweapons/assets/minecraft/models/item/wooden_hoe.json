@@ -20,7 +20,7 @@
       "predicate": {
         "custom_model_data": 1003
       },
-      "model": "item/staffs/weather_staff"
+      "model": "item/staffs/wind_staff"
     }
   ]
 }
