@@ -9,6 +9,8 @@ commands:
   ec:
     description: Open your Ender Chest
     usage: /<command>
+    permission: dbweapons.ec
   item:
     description: Give yourself an Item
     usage: /<command> <item>
+    permission: dbweapons.item

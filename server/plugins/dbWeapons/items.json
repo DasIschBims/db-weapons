@@ -1,9 +1,37 @@
 {
-  "test": {
+  "sniper": {
     "id": "1",
-    "material":"STICK",
-    "name":"§r§lTest",
-    "lore":["", "§fThis is a test Item!", ""],
-    "cmd":1
+    "material":"SPYGLASS",
+    "name":"§r§lSniper",
+    "lore":["", "§fSniper with Laser"],
+    "cmd":1001
+  },
+  "saber": {
+    "id": "2",
+    "material":"NETHERITE_SWORD",
+    "name":"§r§lLight Saber",
+    "lore":["", "§fbsmmm pfeeew"],
+    "cmd":1001
+  },
+  "fire_staff": {
+    "id": "3",
+    "material":"WOODEN_HOE",
+    "name":"§r§lFire Staff",
+    "lore":["", "§fFire Staff"],
+    "cmd":1001
+  },
+  "water_staff": {
+    "id": "4",
+    "material":"WOODEN_HOE",
+    "name":"§r§lWater Staff",
+    "lore":["", "§fWater Staff"],
+    "cmd":1002
+  },
+  "weather_staff": {
+    "id": "5",
+    "material":"WOODEN_HOE",
+    "name":"§r§lWeather Staff",
+    "lore":["", "§fWeather Staff"],
+    "cmd":1003
   }
 }

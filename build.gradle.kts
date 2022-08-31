@@ -16,7 +16,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     compileOnly("io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.+")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
 }
 
 tasks.test {
