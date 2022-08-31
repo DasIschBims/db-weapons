@@ -1,9 +1,0 @@
-{
-  "test": {
-    "material":"stick",
-    "displayName":"§r§l§Test",
-    "lore":["", "§fThis is a test Item!", ""],
-    "cmd":1,
-    "data":{}
-  }
-}

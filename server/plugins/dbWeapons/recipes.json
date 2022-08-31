@@ -1,0 +1,10 @@
+{
+  "testItem": {
+    "result": "mc:diamond",
+    "shape": ["AAA", "ABA", "AAA"],
+    "ingredients": {
+      "A": "mc:stick",
+      "B": "mc:redstone"
+    }
+  }
+}

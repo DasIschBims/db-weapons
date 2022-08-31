@@ -1,32 +1,51 @@
 package dev.dasischbims.commands
 
-import dev.dasischbims.dbweapons.asPlayer
-import org.bukkit.Material
+import dev.dasischbims.asPlayer
+import dev.dasischbims.customItemsMap
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
+import org.bukkit.command.TabCompleter
 import org.bukkit.inventory.ItemStack
 
-class ItemCommand : CommandExecutor {
+class ItemCommand : CommandExecutor, TabCompleter {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         val player = sender.asPlayer()
-        if (player.isOp || player.hasPermission("dbweapons.item")) {
-            if(args.isEmpty()) {
-                player.sendMessage("§4Please specify an item!")
-                return true
-            }
-            val material = Material.getMaterial(args[0].uppercase())
-            // check if amount is specified and if it is a number and if it is greater than 0
-            val amount = if (args.size > 1 && args[1].toIntOrNull() != null && args[1].toInt() > 0) args[1].toInt() else 1
-            if (material != null) {
-                player.inventory.addItem(ItemStack(material, amount))
-                player.sendMessage("§aYou have received the item §6${args[0].lowercase().replaceFirstChar { it.uppercase() }} (x${amount})§a!§r")
-            } else {
-                player.sendMessage("§4The item §6${args[0].lowercase().replaceFirstChar { it.uppercase() }}§4 does not exist!§r")
-            }
-        } else {
-            player.sendMessage("§4You can't use /item!")
+        if(!player.hasPermission("dbweapons.item")) return false
+        if(args.isEmpty()) {
+            player.sendMessage("§4Please specify an item!")
+            return true
         }
+        val itemString = args[0]
+        var amount = 1
+        if(args.size >= 2) amount = try { args[1].toInt() } catch (ex: Exception) {1}
+        if(!customItemsMap.containsKey(itemString)){
+            player.sendMessage("§4Item not found")
+            return true
+        }
+        val itemStack: ItemStack = customItemsMap[itemString]!!
+        itemStack.amount = amount
+        player.inventory.addItem(itemStack)
+        player.sendMessage("§aGave you $amount ${itemString.first().uppercase() + itemString.substring(1)}")
         return true
+    }
+
+    override fun onTabComplete(
+        sender: CommandSender,
+        command: Command,
+        alias: String,
+        args: Array<out String>
+    ): MutableList<String>? {
+        if (args.size == 1) {
+            val current: String = args[0]
+            val list: MutableList<String> = ArrayList()
+            for (key in customItemsMap.keys) {
+                if (key.startsWith(current)) {
+                    list.add(key)
+                }
+            }
+            return list
+        } else if (args.size == 2) return arrayListOf("01", "08", "16", "32", "48", "64")
+        return null
     }
 }

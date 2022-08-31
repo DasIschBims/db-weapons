@@ -1,6 +1,6 @@
 package dev.dasischbims.commands
 
-import dev.dasischbims.dbweapons.asPlayer
+import dev.dasischbims.asPlayer
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender

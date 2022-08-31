@@ -3,10 +3,13 @@ package dev.dasischbims
 import com.fasterxml.jackson.databind.exc.MismatchedInputException
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
+import org.bukkit.inventory.ItemStack
 import java.io.File
 
 // consts
+val customItemsMap = HashMap<String, ItemStack>()
 
+// config
 data class PluginConfig(val texturePackURL: String, val texturePackHash: String)
 private val DEFAULT_CONFIG = PluginConfig("", "")
 lateinit var CONFIG: PluginConfig
