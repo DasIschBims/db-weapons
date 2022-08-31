@@ -1,0 +1,9 @@
+{
+  "test": {
+    "id": "1",
+    "material":"STICK",
+    "name":"§r§lTest",
+    "lore":["", "§fThis is a test Item!", ""],
+    "cmd":1
+  }
+}
