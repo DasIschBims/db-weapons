@@ -22,7 +22,8 @@ object WindStaff {
                 val block: Block?
                 try {
                     block = Objects.requireNonNull(player.rayTraceBlocks(20.0))!!.hitBlock
-                    drawSmokeCircle(block!!.location, 5.0)
+                    val loc = block!!.location.add(0.5, 0.5, 0.5)
+                    drawSmokeCircle(loc, 5.0)
                     block.world.playSound(block.location, "minecraft:block.powder_snow.place", 1.0f, 1.0f)
                     player.playSound(player.location, "minecraft:block.powder_snow.place", 1.0f, 1.0f)
                 } catch (ignored: NullPointerException) {
