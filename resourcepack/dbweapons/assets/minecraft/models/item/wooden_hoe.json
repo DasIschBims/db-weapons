@@ -21,6 +21,12 @@
         "custom_model_data": 1003
       },
       "model": "item/staffs/wind_staff"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1004
+      },
+      "model": "item/weapons/sniper_laser"
     }
   ]
 }

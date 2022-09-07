@@ -1,6 +1,5 @@
 package dev.dasischbims
 
-import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.plugin.java.JavaPlugin
 
@@ -24,10 +23,6 @@ class Main : JavaPlugin() {
         server.consoleSender.sendMessage("${ChatColor.DARK_AQUA}Author: ${ChatColor.WHITE}${description.authors[0]}")
         server.consoleSender.sendMessage("")
         server.consoleSender.sendMessage("")
-
-        for (player in Bukkit.getOnlinePlayers()) {
-            server.consoleSender.sendMessage("$player")
-        }
     }
 
     override fun onDisable() {

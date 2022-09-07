@@ -10,6 +10,6 @@ fun drawSmokeCircle(location: Location, radius: Double) {
         val x = radius * (sin(t.toDouble()))
         val z = radius * (cos(t.toDouble()))
 
-        location.world?.spawnParticle(Particle.CLOUD, location.clone().add(x, 1.25, z), 0, 0.0, 0.0, 0.0, 0.0)
+        location.world?.spawnParticle(Particle.CLOUD, location.clone().add(x, 1.25, z), 0, 0.5, 0.0, 0.5, 0.0)
     }
 }

@@ -1,10 +1,10 @@
 {
   "sniper": {
     "id": "1",
-    "material":"SPYGLASS",
+    "material":"WOODEN_HOE",
     "name":"§r§lSniper",
-    "lore":["", "§fSniper with Laser"],
-    "cmd":1001
+    "lore":["", "§6Sneak + Right Click§7: §fScope in to aim at Entities.", "", "§6Left Click while Aiming§7: §fShoots the Sniper."],
+    "cmd":1004
   },
   "saber": {
     "id": "2",

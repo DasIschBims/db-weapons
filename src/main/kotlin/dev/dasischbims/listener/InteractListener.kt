@@ -27,13 +27,9 @@ class InteractListener: Listener {
                             player.sendMessage("You used a water staff")
                         }
                         1003 -> WindStaff.handleClick(event)
+                        1004 -> Sniper.handleClick(event)
                     }
                     event.isCancelled = true
-                }
-                Material.SPYGLASS -> {
-                    when (cmd) {
-                        1001 -> Sniper.handleClick(event)
-                    }
                 }
                 else -> return
             }
