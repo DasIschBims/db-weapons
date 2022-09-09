@@ -11,7 +11,7 @@ object Sniper {
         val player = event.player
         when (event.action) {
             Action.LEFT_CLICK_AIR, Action.LEFT_CLICK_BLOCK -> try {
-                if (player.isSneaking && player.hasPotionEffect(PotionEffectType.SLOW)) {
+                if (player.isSneaking && player.hasPotionEffect(PotionEffectType.SPEED) && player.hasPotionEffect(PotionEffectType.JUMP)) {
                     val target = player.getTargetEntity(100)
                     if (target != null) {
                         if (target is LivingEntity) {
@@ -33,7 +33,8 @@ object Sniper {
             Action.RIGHT_CLICK_AIR, Action.RIGHT_CLICK_BLOCK -> {
                 if (player.isSneaking) {
                     player.addPotionEffects(listOf(
-                        PotionEffectType.SLOW.createEffect(10, 225),
+                        PotionEffectType.SPEED.createEffect(10, -1),
+                        PotionEffectType.JUMP.createEffect(10, -1),
                     ))
                 }
             }

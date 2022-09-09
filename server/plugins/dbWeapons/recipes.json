@@ -4,8 +4,19 @@
     "shape": ["A", "B", "C"],
     "ingredients": {
       "A": "mc:red_stained_glass_pane",
-      "B": "mc:amethyst_shard",
+      "B": "mc:nether_star",
       "C": "mc:netherite_ingot"
+    }
+  },
+  "sniper": {
+    "result": "db:sniper",
+    "shape": [" A ", "DBE", " C "],
+    "ingredients": {
+      "A": "mc:glass_pane",
+      "B": "mc:crossbow",
+      "C": "mc:iron_ingot",
+      "D": "mc:netherite_ingot",
+      "E": "mc:red_stained_glass_pane"
     }
   }
 }
