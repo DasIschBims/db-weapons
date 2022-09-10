@@ -7,14 +7,13 @@ import dev.dasischbims.customItemsMap
 import net.kyori.adventure.text.Component
 import org.bukkit.Material
 import org.bukkit.NamespacedKey
-import org.bukkit.enchantments.Enchantment
 import org.bukkit.inventory.ItemStack
 import org.bukkit.persistence.PersistentDataType
 import java.io.File
 
 object CustomItems {
 
-    data class CustomItem(val id: String, val material: String, val name: String, val lore: List<String>? = null, val cmd: Int? = null, val enchantments: HashMap<String, Int>? = null)
+    data class CustomItem(val id: String, val material: String, val name: String, val lore: List<String>? = null, val cmd: Int? = null, val enchantments: HashMap<String, Int>? = null, val isUnbreakable: Boolean? = null)
 
     internal fun loadItems() {
         val file = File(INSTANCE.dataFolder.path + "/items.json")
@@ -22,6 +21,7 @@ object CustomItems {
             jacksonObjectMapper().readValue<HashMap<String, CustomItem>>(file).forEach { itemObj ->
                 customItemsMap[itemObj.key] = itemObj.value.toItemStack()
             }
+            println(customItemsMap)
         } else {
             file.createNewFile()
             jacksonObjectMapper().writeValue(file, hashMapOf<String, CustomItem>())
@@ -37,11 +37,9 @@ object CustomItems {
             componentArray.add(Component.text(it))
         }
         itemMeta.lore(componentArray)
-        if(cmd != null) itemMeta.setCustomModelData(cmd)
+        if (isUnbreakable != null && isUnbreakable != false) itemMeta.isUnbreakable = isUnbreakable
+        if (cmd != null) itemMeta.setCustomModelData(cmd)
         itemStack.itemMeta = itemMeta
-        enchantments?.forEach {
-            itemStack.addUnsafeEnchantment(Enchantment.getByKey(NamespacedKey.fromString(it.key))!!, it.value)
-        }
         return itemStack
     }
 

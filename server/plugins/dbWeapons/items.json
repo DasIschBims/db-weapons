@@ -3,35 +3,45 @@
     "id": "1",
     "material":"WOODEN_HOE",
     "name":"§r§lSniper",
-    "lore":["", "§6Sneak + Right Click§7: §fScope in to aim at Entities.", "", "§6Left Click while Aiming§7: §fShoots the Sniper."],
-    "cmd":1004
+    "lore":["", "§6Sneak + Right Click§7: §fScope in.", "", "§6Left Click while scoping§7: §fShoots the Sniper.", "", "Deals more damage to mobs than to players."],
+    "cmd":1004,
+    "enchantments": {},
+    "isUnbreakable": false
   },
   "saber": {
     "id": "2",
     "material":"NETHERITE_SWORD",
     "name":"§r§lLight Saber",
-    "lore":["", "§fbsmmm pfeeew"],
-    "cmd":1001
+    "lore":["", "§6Bonus Damage§7: §fDeals +5 damage to all mobs.", "This does not affect players."],
+    "cmd":1001,
+    "enchantments": {},
+    "isUnbreakable": false
   },
   "fire_staff": {
     "id": "3",
     "material":"WOODEN_HOE",
     "name":"§r§lFire Staff",
     "lore":["", "§fFire Staff"],
-    "cmd":1001
+    "cmd":1001,
+    "enchantments": {},
+    "isUnbreakable": true
   },
   "water_staff": {
     "id": "4",
     "material":"WOODEN_HOE",
     "name":"§r§lWater Staff",
     "lore":["", "§fWater Staff"],
-    "cmd":1002
+    "cmd":1002,
+    "enchantments": {},
+    "isUnbreakable": true
   },
   "wind_staff": {
     "id": "5",
     "material":"WOODEN_HOE",
     "name":"§r§lWind Staff",
     "lore":["", "§6Left Click§7: §fSpawn a cloud that catches you.", "", "§6Right Click§7: §fLaunches entities into the air."],
-    "cmd":1003
+    "cmd":1003,
+    "enchantments": {},
+    "isUnbreakable": true
   }
 }
